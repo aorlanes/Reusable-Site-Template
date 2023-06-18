@@ -65,7 +65,7 @@ const ContactPage = () => {
 						width: 256,
 						marginTop: 12,
 					}}
-					href="mailto:veraandsonscc@gmail.com"
+					href="mailto:veraandsonscc@example.com"
 				>
 					<Icon
 						fontSize="small"
@@ -106,7 +106,7 @@ const ContactPage = () => {
 						<ListItemIcon style={{ minWidth: 36 }}>
 							<Icon fontSize="small">mail_outline_rounded</Icon>
 						</ListItemIcon>
-						<Typography>veraandsonscc@gmail.com</Typography>
+						<Typography>veraandsonscc@example.com</Typography>
 					</ListItem>
 					<ListItem
 						disablePadding
@@ -119,7 +119,7 @@ const ContactPage = () => {
 							<Icon fontSize="small">place_rounded</Icon>
 						</ListItemIcon>
 						<Typography>
-							Vera &amp; Sons <br /> PO Box 123 <br /> Los Angeles, CA 90008
+							Vera &amp; Sons <br /> PO Box 123 <br /> Los Angeles, CA 90034
 						</Typography>
 					</ListItem>
 				</List>

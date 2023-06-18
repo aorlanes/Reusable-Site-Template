@@ -7,17 +7,11 @@ type Props = {
 	alignment: 'LEFT' | 'RIGHT';
 	title: string;
 	text: string;
-	servicesList: string[];
+	itemList?: string[];
 	image: string;
 };
 
-const ServicesSectionItem = ({
-	alignment,
-	title,
-	text,
-	servicesList,
-	image,
-}: Props) => {
+const InfoCard = ({ alignment, title, text, itemList, image }: Props) => {
 	const isTablet = useMediaQuery(theme.breakpoints.down('md'));
 	return (
 		<Paper
@@ -56,7 +50,7 @@ const ServicesSectionItem = ({
 				</Typography>
 				<Typography>{text}</Typography>
 				<ul>
-					{servicesList.map((item) => {
+					{itemList?.map((item) => {
 						return <li style={{ textAlign: 'start' }}>{item}</li>;
 					})}
 				</ul>
@@ -74,4 +68,4 @@ const ServicesSectionItem = ({
 	);
 };
 
-export default ServicesSectionItem;
+export default InfoCard;

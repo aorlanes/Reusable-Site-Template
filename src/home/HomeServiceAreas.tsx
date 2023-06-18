@@ -48,7 +48,7 @@ const HomeServiceAreas = () => {
 				color={theme.palette.darkGray.main}
 				style={{ textAlign: 'center', paddingBottom: 32 }}
 			>
-				We proudly serve throughout the West LA area.
+				Lorem ipsum dolor sit amet.
 			</Typography>
 			<div
 				style={{

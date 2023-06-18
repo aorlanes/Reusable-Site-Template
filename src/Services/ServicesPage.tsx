@@ -2,9 +2,9 @@ import '../App.css';
 import theme from '../theme';
 import { Button, Icon, Typography, useMediaQuery } from '@mui/material';
 import Container from '../components/Container';
-import ServicesSectionItem from './ServiceSectionItem';
 import { ServicesMapping } from './ServicesMapping';
 import * as React from 'react';
+import InfoCard from '../components/InfoCard';
 
 const ServicesPage = () => {
 	const isTablet = useMediaQuery(theme.breakpoints.down('md'));
@@ -42,7 +42,7 @@ const ServicesPage = () => {
 					width: 256,
 					marginTop: 12,
 				}}
-				href="mailto:veraandsonscc@gmail.com"
+				href="mailto:veraandsonscc@example.com"
 			>
 				<Icon
 					fontSize="small"
@@ -80,11 +80,11 @@ const ServicesPage = () => {
 				{contactButtons}
 				{ServicesMapping.map((service, index) => {
 					return (
-						<ServicesSectionItem
+						<InfoCard
 							alignment={index % 2 === 0 ? 'RIGHT' : 'LEFT'}
 							title={service.title}
 							text={service.text}
-							servicesList={service.servicesList}
+							itemList={service.servicesList}
 							image={service.image}
 						/>
 					);
