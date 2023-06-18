@@ -4,6 +4,7 @@ import { Typography, useMediaQuery } from '@mui/material';
 import ServicesSectionItem from '../Services/ServiceSectionItem';
 import { ServicesMapping } from '../Services/ServicesMapping';
 import Container from '../components/Container';
+import * as React from 'react';
 
 const AboutUsPage = () => {
 	const isTablet = useMediaQuery(theme.breakpoints.down('md'));

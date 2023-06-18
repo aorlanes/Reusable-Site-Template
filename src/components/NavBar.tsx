@@ -16,6 +16,7 @@ import VsLogoFull from '../assets/logo-full-color.svg';
 import VsLogoShort from '../assets/logo-short-color.svg';
 import { MenuRounded } from '@mui/icons-material';
 import theme from '../theme';
+import * as React from 'react';
 
 const navItems = [
 	{ label: 'Home', href: '/' },

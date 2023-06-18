@@ -1,8 +1,9 @@
-import { Typography, Button, useMediaQuery, Icon } from '@mui/material';
+import { Typography, Button, useMediaQuery } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import theme from '../theme';
 import bgImg from '../assets/img10.jpeg';
 import Container from '../components/Container';
+import * as React from 'react';
 
 const HomeHeader = () => {
 	const isMobile = useMediaQuery(theme.breakpoints.down('sm'));

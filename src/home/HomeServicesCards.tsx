@@ -15,6 +15,7 @@ import carpetImg from '../assets/img12.jpeg';
 import floorImg from '../assets/img9.jpeg';
 import detailingImg from '../assets/img6.jpeg';
 import pressureWashingImg from '../assets/img11.jpeg';
+import * as React from 'react';
 
 const HomeServicesCards = () => {
 	const isTablet = useMediaQuery(theme.breakpoints.down('md'));

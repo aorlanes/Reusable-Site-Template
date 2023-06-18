@@ -1,6 +1,7 @@
 import '../App.css';
 import theme from '../theme';
 import { Paper, Typography, useMediaQuery } from '@mui/material';
+import * as React from 'react';
 
 type Props = {
 	alignment: 'LEFT' | 'RIGHT';

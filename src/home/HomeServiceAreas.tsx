@@ -2,6 +2,7 @@ import { Grid, List, ListItem, Typography, useMediaQuery } from '@mui/material';
 import PlaceIcon from '@mui/icons-material/Place';
 import theme from '../theme';
 import Container from '../components/Container';
+import * as React from 'react';
 
 const HomeServiceAreas = () => {
 	const isMobile = useMediaQuery(theme.breakpoints.down('sm'));

@@ -1,4 +1,5 @@
 import './App.css';
+import * as React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HomePage from './home/HomePage';
 import AboutUsPage from './AboutUs/AboutUsPage';
@@ -8,7 +9,7 @@ import NavBar from './components/NavBar';
 import { ThemeProvider } from '@emotion/react';
 import theme from './theme';
 import Footer from './components/Footer';
-import ScrollToTop from './components/ScrollToTop';
+import { ScrollToTop } from './components/ScrollToTop';
 
 function App() {
 	return (

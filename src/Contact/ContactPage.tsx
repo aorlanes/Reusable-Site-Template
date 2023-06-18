@@ -11,6 +11,7 @@ import {
 	useMediaQuery,
 } from '@mui/material';
 import Container from '../components/Container';
+import * as React from 'react';
 
 const ContactPage = () => {
 	const isTablet = useMediaQuery(theme.breakpoints.down('md'));

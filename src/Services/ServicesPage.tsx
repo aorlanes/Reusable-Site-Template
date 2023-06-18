@@ -4,6 +4,7 @@ import { Button, Icon, Typography, useMediaQuery } from '@mui/material';
 import Container from '../components/Container';
 import ServicesSectionItem from './ServiceSectionItem';
 import { ServicesMapping } from './ServicesMapping';
+import * as React from 'react';
 
 const ServicesPage = () => {
 	const isTablet = useMediaQuery(theme.breakpoints.down('md'));

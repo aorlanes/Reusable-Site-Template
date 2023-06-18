@@ -1,6 +1,7 @@
 import { Icon, Typography, useMediaQuery } from '@mui/material';
 import theme from '../theme';
 import Container from '../components/Container';
+import * as React from 'react';
 
 const HomeAttributes = () => {
 	const isTablet = useMediaQuery(theme.breakpoints.down('md'));

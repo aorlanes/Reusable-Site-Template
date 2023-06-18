@@ -1,3 +1,4 @@
+import * as React from 'react';
 import HomeAttributes from './HomeAttributes';
 import HomeHeader from './HomeHeader';
 import HomeServiceAreas from './HomeServiceAreas';
