@@ -45,9 +45,10 @@ const HomeAttributes = () => {
 					flexDirection: isTablet ? 'column' : 'row',
 				}}
 			>
-				{attributes.map((att) => {
+				{attributes.map((att, index) => {
 					return (
 						<Attribute
+							key={index}
 							title={att.title}
 							text={att.text}
 							icon={att.icon}

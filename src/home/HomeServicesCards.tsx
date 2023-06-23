@@ -1,11 +1,5 @@
-import {
-	Button,
-	Card,
-	CardContent,
-	CardMedia,
-	Typography,
-	useMediaQuery,
-} from '@mui/material';
+import * as React from 'react';
+import { Button, Typography, useMediaQuery } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import theme from '../theme';
 import Container from '../components/Container';
@@ -15,7 +9,7 @@ import carpetImg from '../assets/img12.jpeg';
 import floorImg from '../assets/img9.jpeg';
 import detailingImg from '../assets/img6.jpeg';
 import pressureWashingImg from '../assets/img11.jpeg';
-import * as React from 'react';
+import InfoCardSmall from '../components/InfoCardSmall';
 
 const HomeServicesCards = () => {
 	const isTablet = useMediaQuery(theme.breakpoints.down('md'));
@@ -78,9 +72,10 @@ const HomeServicesCards = () => {
 					paddingBottom: 24,
 				}}
 			>
-				{services.map((service) => {
+				{services.map((service, index) => {
 					return (
-						<ServicesCard
+						<InfoCardSmall
+							key={index}
 							title={service.title}
 							text={service.text}
 							image={service.image}
@@ -96,41 +91,6 @@ const HomeServicesCards = () => {
 				Learn More
 			</Button>
 		</Container>
-	);
-};
-
-type ServiceCardProps = {
-	title: string;
-	text: string;
-	image: string;
-};
-
-const ServicesCard = ({ title, text, image }: ServiceCardProps) => {
-	return (
-		<Card style={{ width: 300, margin: 8 }}>
-			<CardMedia
-				component="img"
-				height="140"
-				image={image}
-				alt={title}
-				sx={{ backgroundPosition: 'center bottom' }}
-			/>
-			<CardContent>
-				<Typography
-					gutterBottom
-					variant="h5"
-					component="div"
-				>
-					{title}
-				</Typography>
-				<Typography
-					variant="body2"
-					color="text.secondary"
-				>
-					{text}
-				</Typography>
-			</CardContent>
-		</Card>
 	);
 };
 

@@ -4,7 +4,7 @@ import { Button, Icon, Typography, useMediaQuery } from '@mui/material';
 import Container from '../components/Container';
 import { ServicesMapping } from './ServicesMapping';
 import * as React from 'react';
-import InfoCard from '../components/InfoCard';
+import InfoCardLarge from '../components/InfoCardLarge';
 
 const ServicesPage = () => {
 	const isTablet = useMediaQuery(theme.breakpoints.down('md'));
@@ -80,7 +80,8 @@ const ServicesPage = () => {
 				{contactButtons}
 				{ServicesMapping.map((service, index) => {
 					return (
-						<InfoCard
+						<InfoCardLarge
+							key={index}
 							alignment={index % 2 === 0 ? 'RIGHT' : 'LEFT'}
 							title={service.title}
 							text={service.text}

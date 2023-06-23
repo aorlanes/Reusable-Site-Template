@@ -11,7 +11,7 @@ type Props = {
 	image: string;
 };
 
-const InfoCard = ({ alignment, title, text, itemList, image }: Props) => {
+const InfoCardLarge = ({ alignment, title, text, itemList, image }: Props) => {
 	const isTablet = useMediaQuery(theme.breakpoints.down('md'));
 	return (
 		<Paper
@@ -68,4 +68,4 @@ const InfoCard = ({ alignment, title, text, itemList, image }: Props) => {
 	);
 };
 
-export default InfoCard;
+export default InfoCardLarge;

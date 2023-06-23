@@ -89,9 +89,10 @@ const HomeServiceAreas = () => {
 						dense
 					>
 						<Grid container>
-							{areas.map((area) => {
+							{areas.map((area, index) => {
 								return (
 									<Grid
+										key={index}
 										item
 										xs={6}
 										sm={4}

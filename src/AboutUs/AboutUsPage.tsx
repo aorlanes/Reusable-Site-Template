@@ -4,7 +4,7 @@ import { Typography, useMediaQuery } from '@mui/material';
 import { AboutUsMapping } from './AboutUsMapping';
 import Container from '../components/Container';
 import * as React from 'react';
-import InfoCard from '../components/InfoCard';
+import InfoCardLarge from '../components/InfoCardLarge';
 
 const AboutUsPage = () => {
 	const isTablet = useMediaQuery(theme.breakpoints.down('md'));
@@ -33,7 +33,8 @@ const AboutUsPage = () => {
 				</Typography>
 				{AboutUsMapping.map((item, index) => {
 					return (
-						<InfoCard
+						<InfoCardLarge
+							key={index}
 							alignment={index % 2 === 0 ? 'RIGHT' : 'LEFT'}
 							title={item.title}
 							text={item.text}
