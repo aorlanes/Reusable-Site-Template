@@ -26,7 +26,7 @@ const Carousel = ({
 	const carouselRef = React.createRef<HTMLDivElement>();
 	const [currentItem, setCurrentItem] = React.useState<number>(0);
 	const [nextPrevInQueue, setNextPrevInQueue] = React.useState({
-		next: 1,
+		next: slideByCount,
 		prev: -1,
 	});
 	const [nextPrevDisabled, setNextPrevDisabled] = React.useState({
@@ -36,24 +36,33 @@ const Carousel = ({
 	const itemsCount = items.length;
 
 	React.useEffect(() => {
-		setNextPrevInQueue({ next: currentItem + 1, prev: currentItem - 1 });
+		setNextPrevInQueue({
+			next: currentItem + displayCount,
+			prev: currentItem - displayCount,
+		});
 		setNextPrevDisabled({
 			next: currentItem + 1 > itemsCount - displayCount,
 			prev: currentItem - 1 < 0,
 		});
 
-		carouselRef.current.scroll({
-			top: 0,
-			left: itemRefs[currentItem].current!.offsetLeft,
-			behavior: 'smooth',
-		});
+		currentItem > -1 &&
+			currentItem < itemsCount &&
+			carouselRef.current.scroll({
+				top: 0,
+				left: itemRefs[currentItem].current!.offsetLeft,
+				behavior: 'smooth',
+			});
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [currentItem]);
 
 	const onChange = (direction: CarouselDirection) => {
 		direction === 'LEFT'
-			? setCurrentItem(nextPrevInQueue.next)
-			: setCurrentItem(nextPrevInQueue.prev);
+			? setCurrentItem(
+					nextPrevInQueue.next < itemsCount - displayCount
+						? nextPrevInQueue.next
+						: itemsCount - displayCount
+			  )
+			: setCurrentItem(nextPrevInQueue.prev < 0 ? 0 : nextPrevInQueue.prev);
 	};
 
 	return (

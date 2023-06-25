@@ -55,6 +55,16 @@ const HomeReviewsCarousel = () => {
 			text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.',
 			rating: 3,
 		},
+		{
+			name: 'Sam S.',
+			text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.',
+			rating: 5,
+		},
+		{
+			name: 'Karen B.',
+			text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.',
+			rating: 1,
+		},
 	];
 
 	const reviewCards = reviews.map((review, index) => {
@@ -88,6 +98,7 @@ const HomeReviewsCarousel = () => {
 			<Carousel
 				items={reviewCards}
 				displayCount={3}
+				slideByCount={3}
 				style={{ paddingBottom: 24 }}
 			/>
 			<Button
@@ -126,7 +137,7 @@ const ratingToStars = (rating: number) => {
 
 const ReviewCard = ({ rating, name, text }: ReviewCardProps) => {
 	return (
-		<Card style={{ minWidth: 300, maxWidth: 300, margin: 8 }}>
+		<Card style={{ minWidth: 300, maxWidth: 300, margin: 9 }}>
 			<CardContent>
 				<div style={{ height: 40, paddingTop: 8 }}>
 					{ratingToStars(rating).map((star, index) => {
