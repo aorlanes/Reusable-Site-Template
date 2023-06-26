@@ -16,7 +16,9 @@ import Container from '../components/Container';
 import Carousel from '../components/Carousel';
 
 const HomeReviewsCarousel = () => {
+	const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 	const isTablet = useMediaQuery(theme.breakpoints.down('md'));
+	const isDesktop = useMediaQuery(theme.breakpoints.down('lg'));
 	const navigate = useNavigate();
 
 	const reviews = [
@@ -86,6 +88,8 @@ const HomeReviewsCarousel = () => {
 				textAlign: 'center',
 				alignItems: 'center',
 				width: '100%',
+				paddingLeft: 0,
+				paddingRight: 0,
 			}}
 		>
 			<Typography
@@ -97,9 +101,11 @@ const HomeReviewsCarousel = () => {
 			</Typography>
 			<Carousel
 				items={reviewCards}
-				displayCount={3}
-				slideByCount={3}
-				style={{ paddingBottom: 24 }}
+				displayCount={isTablet ? 1 : isDesktop ? 2 : 3}
+				slideByCount={isTablet ? 1 : isDesktop ? 2 : 3}
+				style={{
+					paddingBottom: 24,
+				}}
 			/>
 			<Button
 				variant="outlined"

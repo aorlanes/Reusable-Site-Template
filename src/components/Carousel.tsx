@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Button } from '@mui/material';
+import { Button, useMediaQuery } from '@mui/material';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import theme from '../theme';
@@ -19,6 +19,7 @@ const Carousel = ({
 	slideByCount = 1,
 	style,
 }: CarouselProps) => {
+	const isDesktop = useMediaQuery(theme.breakpoints.down('lg'));
 	const itemRefs = React.useMemo(
 		() => items.map(() => React.createRef<HTMLDivElement>()),
 		[items]
@@ -34,6 +35,11 @@ const Carousel = ({
 		prev: true,
 	});
 	const itemsCount = items.length;
+
+	const [itemWidth, setItemWidth] = React.useState(0);
+	React.useEffect(() => {
+		setItemWidth(itemRefs[0].current!.clientWidth);
+	}, [itemRefs, setItemWidth]);
 
 	React.useEffect(() => {
 		setNextPrevInQueue({
@@ -72,6 +78,7 @@ const Carousel = ({
 				position: 'relative',
 				width: '100%',
 				alignItems: 'center',
+				maxWidth: isDesktop ? `${itemWidth * displayCount}px` : '100%',
 				...style,
 			}}
 		>
