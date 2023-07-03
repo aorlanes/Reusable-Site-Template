@@ -1,3 +1,15 @@
+# Reusable Site Template
+
+This project can be used as an example or as a boilerplate for a simple static website. 
+
+## Recommended Architecture
+
+The architecture is organized by site main pages, custom reusable components, assets, and shared hooks. Within the main page folders should be modules associated with the respective page.
+
+## Future Goals
+
+Future plans for this project include backend and CMS counterparts to be useful for more dynamic demands.
+
 # Starting Reusable Site Template
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -13,6 +25,10 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
+
+### `npm install`
+
+Installs and updates the latest dependencies. It is good practice to regularly run this script to avoid issues running the latest branch version.
 
 ### `npm test`
 
